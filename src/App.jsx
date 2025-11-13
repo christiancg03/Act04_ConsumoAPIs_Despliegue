@@ -8,11 +8,8 @@ function App() {
 
     <Catalogo>
       <h1 className="font-heading-h1 leading-(--heading-h1-line-height) text-(--colorprimary) [text-shadow:0px_4px_4px_#00000040]">
-        {/* <h1 className="h1__sqlito [text-shadow:0px_4px_4px_#00000040]"> */}
-        {/* <h1 className="contenedor__h1 [text-shadow:0px_4px_4px_#00000040]"> */}
         Camisetas de Fútbol
       </h1>
-      {/* <p className="text-(--body-text-font-color) leading-(--body-text-line-height)"> */}
       <p className="body-text">
         Nuestro Catálogo de camisetas de fútbol:
       </p>

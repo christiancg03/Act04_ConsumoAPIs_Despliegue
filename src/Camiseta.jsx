@@ -16,10 +16,12 @@ function Camiseta(props) {
         />
       </figure>
 
+      {/* Nombre de Cada Camiseta */}
       <header>
         <h2 className="text-lg font-bold text-gray-900">{nombre}</h2>
       </header>
 
+      {/* Contenido de Cada Camiseta */}
       <p className="text-gray-600 text-sm">{descripcion}</p>
       <p className="text-gray-800 font-semibold">Precio: {precio}€</p>
       <p className="text-gray-500 text-sm">{categoria}</p>
