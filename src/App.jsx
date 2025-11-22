@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import CamisetaDetalle from "./pages/CamisetaDetalle";
 import ErrorPage from "./pages/ErrorPage";
@@ -28,6 +29,8 @@ function App() {
         <Route path="*" element={<ErrorPage />} />
 
       </Routes>
+
+      <Footer />
     </>
   );
 }
