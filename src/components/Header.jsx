@@ -12,7 +12,7 @@ function Header() {
 
         {/* Logo */}
         <h1 className="text-xl font-heading-h3 text-(--colorprimary)">
-          Página de Camiseta de Fútbol
+          FUTBOL MANIAC
         </h1>
 
         {/* Botón hamburguesa (solo móvil) */}
@@ -61,7 +61,7 @@ function Header() {
         >
           Catálogo
         </NavLink>
-        
+
       </nav>
 
     </header>
