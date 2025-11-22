@@ -1,33 +1,7 @@
 @import "tailwindcss";
 @import "./theme.css";
 
-/** Metodología BEM
- * 
- * Sintaxis:
- * .bloque__elemento--modificador
- *
- * Ejemplo práctico:
- *
- * .newsletter {
- *   text-align: center;
- * }
- *
- * .newsletter__heading {
- *   font-size: 2rem;
- *   margin-bottom: 1rem;
- * }
- *
- * .newsletter__button--action {
- *   background: #74B9FF;
- *   border-color: #74B9FF;
- *   color: white;
- * }
- *
- * Explicación:
- * - "newsletter" es el BLOQUE → el componente principal.
- * - "newsletter__heading" es un ELEMENTO → parte del bloque.
- * - "newsletter__button--action" es un MODIFICADOR → una variación del elemento.
- */
+
 .contenedor__h1{
   /* font-family: var(--heading-h1-font-family); */
   font-size: var(--heading-h1-font-size);
@@ -37,17 +11,6 @@
   line-height: var(--heading-h1-line-height);
   color: var(--colorprimary);
 }
-
-/*
- * Metodología: Utility-First CSS / Atomic CSS
- * 
- * Cada clase define una sola responsabilidad visual concreta, reutilizable en distintos contextos.
- * Por ejemplo:
- * .body-text → define el estilo base del cuerpo de texto.
- * .font-heading-h1 → define exclusivamente las propiedades de un título h1.
- * .font-heading-h2, .font-heading-h5 → idem para cada jerarquía.
- * Estas clases no dependen de un bloque o componente, sino que se pueden aplicar a cualquier elemento 
- * HTML según se necesite. */
 
 .font-heading-h1 {
   font-family: var(--heading-h1-font-family);

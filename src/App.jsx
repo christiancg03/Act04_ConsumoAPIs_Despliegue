@@ -1,5 +1,5 @@
-import Catalogo from "./Catalogo";
-import Camiseta from "./Camiseta";
+import Catalogo from "./components/Catalogo";
+import Camiseta from "./components/Camiseta";
 // import camisetas from "./data/camisetas";
 import camisetas from "./data/camisetas";
 
