@@ -1,35 +1,35 @@
-import Catalogo from "./components/Catalogo";
-import Camiseta from "./components/Camiseta";
-// import camisetas from "./data/camisetas";
-import camisetas from "./data/camisetas";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import CamisetaDetalle from "./pages/CamisetaDetalle";
+import ErrorPage from "./pages/ErrorPage";
+import PaginaCatalogo from "./pages/PaginaCatalogo";
 
 function App() {
   return (
+    <>
+      <Header />
 
-    <Catalogo>
-      <h1 className="font-heading-h1 leading-(--heading-h1-line-height) text-(--colorprimary) [text-shadow:0px_4px_4px_#00000040]">
-        Camisetas de Fútbol
-      </h1>
-      <p className="body-text">
-        Nuestro Catálogo de camisetas de fútbol:
-      </p>
+      <Routes>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
+        {/* Página principal */}
+        <Route path="/" element={<Home />} />
 
-        {camisetas.map((camiseta, index) => (
-          <Camiseta
-            key={camiseta.id ?? index}
-            nombre={camiseta.nombre}
-            descripcion={camiseta.descripcion}
-            precio={camiseta.precio}
-            categoria={camiseta.categoria}
-            foto={camiseta.imagen}
-          />
-        ))}
+        {/* Página de Inicio */}
+        <Route path="/inicio" element={<Navigate to="/" />} />
 
-      </div>
-    </Catalogo>
-  )
+        {/* Página de detalles de la camiseta */}
+        <Route path="/camiseta/:id" element={<CamisetaDetalle />} />
+
+        {/* Página de catálogo completo de las camisetas */}
+        <Route path="/paginacatalogo" element={<PaginaCatalogo></PaginaCatalogo>}></Route>
+
+        {/* Página de error */}
+        <Route path="*" element={<ErrorPage />} />
+
+      </Routes>
+    </>
+  );
 }
 
-export default App
+export default App;
