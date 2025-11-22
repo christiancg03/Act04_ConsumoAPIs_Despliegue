@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 function Catalogo({ children }) {
   return (
     <main
@@ -9,6 +10,7 @@ function Catalogo({ children }) {
       <section aria-labelledby="main-section-title" className="w-full max-w7xl text-center">
         {children}
       </section>
+      <Outlet />
     </main>
   );
 }
