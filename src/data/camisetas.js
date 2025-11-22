@@ -1,4 +1,3 @@
-// import camisetaElche from "../assets/camisetaElche.jpg";
 import camisetaBarcelona from "../assets/camisetaBarça.jpg";
 import camisetaMadrid from "../assets/camisetaMadrid.jpg";
 import camisetaLiverpool from "../assets/camisetaLiverpool.jpg";
