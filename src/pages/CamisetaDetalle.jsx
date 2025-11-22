@@ -3,51 +3,65 @@ import camisetas from "../data/camisetas";
 
 function CamisetaDetalle() {
   const { id } = useParams();
-
-  // Buscar la camiseta por su id
   const camiseta = camisetas.find(c => c.id == id);
 
   if (!camiseta) {
     return (
-      <h1 className="text-center mt-10 text-red-600">
+      <h1 className="text-center mt-20 text-2xl text-red-600 font-bold">
         Camiseta no encontrada
       </h1>
     );
   }
 
   return (
-    <div className="max-w-3xl mx-auto mt-10 p-4">
+    <div className="min-h-screen bg-gradient-to-b from-green-50 to-white py-12 px-4">
 
-      {/* Botón para volver al catálogo */}
-      <Link
-        to="/"
-        className="px-4 py-2 mt-6 rounded-lg bg-gray-200 hover:bg-gray-300 font-medium transition"
-      >
-        Volver
-      </Link>
+      <div className="max-w-3xl mx-auto">
 
-      {/* Nombre */}
-      <h1 className="text-3xl font-bold text-center mb-6">
-        {camiseta.nombre}
-      </h1>
+        {/* Botón volver */}
+        <Link
+          to="/PaginaCatalogo"
+          className="inline-block mb-6 px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-medium transition shadow-sm"
+        >
+          ← Volver al catálogo
+        </Link>
 
-      {/* Imagen */}
-      <img
-        src={camiseta.imagen}
-        alt={camiseta.nombre}
-        className="w-full max-w-xs mx-auto rounded-lg shadow-lg"
-      />
+        {/* Contenido Principal de la camiseta */}
+        <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10">
 
-      {/* Datos */}
-      <p className="mt-6 text-gray-700 text-lg">{camiseta.descripcion}</p>
+          {/* Título */}
+          <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
+            {camiseta.nombre}
+          </h1>
 
-      <p className="mt-4 text-lg">
-        <strong>Precio:</strong> {camiseta.precio} €
-      </p>
+          {/* Imagen */}
+          <div className="flex justify-center">
+            <img
+              src={camiseta.imagen}
+              alt={camiseta.nombre}
+              className="w-64 rounded-xl shadow-md"
+            />
+          </div>
 
-      <p className="text-lg">
-        <strong>Categoría:</strong> {camiseta.categoria}
-      </p>
+          {/* Información de la camiseta */}
+          <div className="mt-8 space-y-4 text-lg text-gray-700">
+
+            <p className="leading-relaxed text-center">
+              {camiseta.descripcion}
+            </p>
+
+            <p className="text-center">
+              <span className="font-bold">Precio:</span> {camiseta.precio} €
+            </p>
+
+            <p className="text-center">
+              <span className="font-bold">Categoría:</span> {camiseta.categoria}
+            </p>
+
+          </div>
+
+        </div>
+      </div>
     </div>
   );
 }
