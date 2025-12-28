@@ -3,6 +3,7 @@ import Catalogo from "./Catalogo";
 import Home from "../pages/Home";
 import CamisetaDetalle from "../pages/CamisetaDetalle";
 import PaginaCatalogo from "../pages/PaginaCatalogo";
+import Admin from "../pages/Admin";
 
 function Router(){
     return(
@@ -12,9 +13,10 @@ function Router(){
                 <Route path="/inicio" element={<Navigate to="/" />} />
                 <Route path="/camiseta/:id" element={<CamisetaDetalle />} />
                 <Route path="/paginacatalogo" element={<PaginaCatalogo></PaginaCatalogo>}></Route>
+                <Route path="/admin" element={<Admin/>}></Route>
             </Route>
 
-            <Route path="*" element={<Catalogo titulo="Ahí no hay magia..."></Catalogo>}
+            <Route path="*" element={<Catalogo titulo="Página no encontrada"></Catalogo>}
             />
 
         </Routes>
