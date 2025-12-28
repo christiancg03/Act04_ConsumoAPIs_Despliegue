@@ -1,16 +1,11 @@
 import { Outlet } from "react-router-dom";
-function Catalogo({ children }) {
+function Catalogo({ titulo }) {
   return (
-    <main
-      id="main-content"
-      role="main"
-      tabIndex="-1"
-      className="min-h-screen bg-linear-to-br bg-green-300 flex flex-col items-center justify-center p-8"
-    >
-      <section aria-labelledby="main-section-title" className="w-full max-w7xl text-center">
-        {children}
+    <main>
+      <section>
+        {titulo && (<h1>{titulo}</h1>)}
+        <Outlet />
       </section>
-      <Outlet />
     </main>
   );
 }
