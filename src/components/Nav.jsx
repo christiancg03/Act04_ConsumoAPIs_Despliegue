@@ -45,6 +45,14 @@ function Nav() {
                     Catálogo
                 </NavLink>
 
+                <NavLink
+                    to="/admin"
+                    onClick={closeMenu}
+                    className="text-gray-700 hover:text-(--colorprimary) font-medium"
+                >
+                    Admin
+                </NavLink>
+
             </nav>
         </>
     )
