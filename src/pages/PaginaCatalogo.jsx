@@ -1,5 +1,7 @@
+import { useState, useMemo } from "react";
 import Camiseta from "../components/Camiseta";
 import camisetas from "../data/camisetas";
+import SearchBar from "../components/SearchBar";
 
 function PaginaCatalogo() {
   return (
