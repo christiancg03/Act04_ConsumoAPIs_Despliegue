@@ -45,6 +45,43 @@ function FormularioCamisetas(){
 
     };
 
+    return(
+        <div className="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+            <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md">
+
+                <div className="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">
+                    Formulario de Camisetas
+                </div>
+
+                <div>
+                    <label htmlFor=""></label>
+                    <input type="text" />
+                </div>
+
+                <div>
+                    <label htmlFor=""></label>
+                    <input type="text" />
+                </div>
+
+                <div>
+                    <label htmlFor=""></label>
+                    <input type="text" />
+                </div>
+
+                <div>
+                    <label htmlFor=""></label>
+                    <input type="text" />
+                </div>
+
+                <div>
+                    <label htmlFor=""></label>
+                    <input type="text" />
+                </div>
+
+            </form>
+        </div>
+    );
+
 }
 
 export default FormularioCamisetas;
