@@ -11,8 +11,8 @@ function FormularioCamisetas(){
     function handleSubmit(e) {
         e.preventDefault();
 
-        if (nombre.length < 8) {
-            setError("Debes de indicar el nombre del equipo al que va a pertenecer esta camiseta");
+        if (nombre.length < 10) {
+            setError("Debes de indicar el nombre del equipo al que va a pertenecer esta camiseta(Camiseta + Nombre Equipo)");
             return;
         }
         if (descripcion.length < 20) {
@@ -53,7 +53,7 @@ function FormularioCamisetas(){
                     Formulario de Camisetas
                 </div>
 
-                <div>
+                <div className="mb-6">
                     <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">
                         Nombre:
                     </label>
@@ -67,7 +67,7 @@ function FormularioCamisetas(){
                         />
                 </div>
 
-                <div>
+                <div className="mb-6">
                     <label htmlFor="descripcion" className="block text-sm font-medium text-gray-700 mb-1">
                         Descripción:
                     </label>
@@ -80,7 +80,7 @@ function FormularioCamisetas(){
                         />
                 </div>
 
-                <div>
+                <div className="mb-6">
                     <label htmlFor="precio" className="block text-sm font-medium text-gray-700 mb-1">
                         Precio:
                     </label>
@@ -93,7 +93,7 @@ function FormularioCamisetas(){
                         />
                 </div>
 
-                <div>
+                <div className="mb-6">
                     <label htmlFor="categoria" className="block text-sm font-medium text-gray-700 mb-1">
                         Categoria:
                     </label>
@@ -103,6 +103,7 @@ function FormularioCamisetas(){
                         onChange={(e) => setCategoria(e.target.value)}
                         className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out" 
                         >
+                        <option value="">Seleccionar Liga</option>
                         <option value="esp">Liga Española</option>
                         <option value="ing">Liga Inglesa</option>
                         <option value="ita">Liga Italiana</option>
@@ -112,7 +113,7 @@ function FormularioCamisetas(){
                     </select>
                 </div>
 
-                <div>
+                <div className="mb-6">
                     <label htmlFor="imagen" className="block text-sm font-medium text-gray-700 mb-1">
                         Imagen:
                     </label>
