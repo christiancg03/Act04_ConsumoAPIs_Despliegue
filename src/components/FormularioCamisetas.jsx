@@ -23,7 +23,7 @@ function FormularioCamisetas(){
             setError("El precio debe ser un número válido mayor que 0");
             return;
         }
-        if (categoria.length < 7) {
+        if (!categoria) {
             setError("Debes de especificar a que liga pertenece la camiseta");
             return;
         }
@@ -54,28 +54,90 @@ function FormularioCamisetas(){
                 </div>
 
                 <div>
-                    <label htmlFor=""></label>
-                    <input type="text" />
+                    <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">
+                        Nombre:
+                    </label>
+                    <input
+                        id="nombre"
+                        type="text"
+                        value={nombre}
+                        onChange={(e) => setNombre(e.target.value)}
+                        aria-invalid={!!error}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
+                        />
                 </div>
 
                 <div>
-                    <label htmlFor=""></label>
-                    <input type="text" />
+                    <label htmlFor="descripcion" className="block text-sm font-medium text-gray-700 mb-1">
+                        Descripción:
+                    </label>
+                    <input 
+                        id="descripcion"
+                        type="text"
+                        value={descripcion}
+                        onChange={(e) => setDescripcion(e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
+                        />
                 </div>
 
                 <div>
-                    <label htmlFor=""></label>
-                    <input type="text" />
+                    <label htmlFor="precio" className="block text-sm font-medium text-gray-700 mb-1">
+                        Precio:
+                    </label>
+                    <input
+                        id="precio" 
+                        type="text"
+                        value={precio}
+                        onChange={(e) => setPrecio(e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out" 
+                        />
                 </div>
 
                 <div>
-                    <label htmlFor=""></label>
-                    <input type="text" />
+                    <label htmlFor="categoria" className="block text-sm font-medium text-gray-700 mb-1">
+                        Categoria:
+                    </label>
+                    <select 
+                        id="categoria"
+                        value={categoria}
+                        onChange={(e) => setCategoria(e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out" 
+                        >
+                        <option value="esp">Liga Española</option>
+                        <option value="ing">Liga Inglesa</option>
+                        <option value="ita">Liga Italiana</option>
+                        <option value="ale">Liga Alemana</option>
+                        <option value="fra">Liga Francesa</option>
+                        <option value="res">Resto del Mundo</option>
+                    </select>
                 </div>
 
                 <div>
-                    <label htmlFor=""></label>
-                    <input type="text" />
+                    <label htmlFor="imagen" className="block text-sm font-medium text-gray-700 mb-1">
+                        Imagen:
+                    </label>
+                    <input
+                        id="imagen" 
+                        type="url"
+                        value={imagen}
+                        onChange={(e) => setImagen(e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
+                        />
+                </div>
+
+                {error && (
+                    <p className="text-red-700 bg-red-100 px-3 py-2 rounded-lg mb-4">
+                        {error}
+                    </p>
+                )}
+
+                <div>
+                    <button
+                        type="submit"
+                        className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 transition duration-150 ease-in-out"
+                    >
+                        Enviar
+                    </button>
                 </div>
 
             </form>
