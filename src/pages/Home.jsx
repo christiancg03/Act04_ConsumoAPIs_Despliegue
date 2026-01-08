@@ -10,7 +10,7 @@ function Home() {
 
       <div className="max-w-4xl mx-auto text-center px-6">
         <h1 className="text-5xl font-bold text-gray-800 mb-4">
-          Bienvenido a la Tienda de Camisetas
+          Bienvenido a la Tienda de Camisetas de Futbol Maniac
         </h1>
 
         <p className="text-lg text-gray-700">
