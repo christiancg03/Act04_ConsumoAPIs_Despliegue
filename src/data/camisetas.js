@@ -1,5 +1,3 @@
-import camisetaBarcelona from "../assets/camisetaBarça.jpg";
-import camisetaMadrid from "../assets/camisetaMadrid.jpg";
 import camisetaLiverpool from "../assets/camisetaLiverpool.jpg";
 import camisetaUnited from "../assets/camisetaUnited.jpg";
 import camisetaArsenal from "../assets/camisetaArsenal.jpg";
@@ -19,7 +17,7 @@ const camisetas =  [
         descripcion: "Camiseta de la actual temporada del FC Barcelona",
         precio: "39,99",
         categoria: "Liga Española",
-        imagen: camisetaBarcelona
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr_zDH7TEVKz0tl_q35gyBSFkXXM2ZzuFm-g&s"
     },
     {
         id: 3,
@@ -27,7 +25,7 @@ const camisetas =  [
         descripcion: "Camiseta de la actual temporada del Real Madrid CF",
         precio: "39,99",
         categoria: "Liga Española",
-        imagen: camisetaMadrid
+        imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5yfO3dzQuDS-ghcPgz6OaYGRNEERlevGT3g&s"
     },
     {
         id: 4,
