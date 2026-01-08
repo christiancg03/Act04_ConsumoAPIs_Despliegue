@@ -2,6 +2,28 @@ import { useParams, Link } from "react-router-dom";
 import camisetas from "../data/camisetas";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * CamisetaDetalle Component
+ * 
+ * Displays detailed information about a specific t-shirt product.
+ * Retrieves the t-shirt data based on the ID parameter from the URL.
+ * 
+ * @component
+ * @returns {React.ReactElement} A detailed view of a t-shirt including:
+ *   - Navigation back button
+ *   - Product image
+ *   - Product name, description, price, and category
+ *   - Returns error message if t-shirt is not found
+ * 
+ * @example
+ * // Usage within a route
+ * <Route path="/camiseta/:id" element={<CamisetaDetalle />} />
+ * 
+ * @throws {Error} Displays error message if camiseta ID is not found in the data
+ * 
+ * @requires react-router-dom - useParams, useNavigate hooks
+ * @requires camisetas - Array of t-shirt objects with properties: id, nombre, imagen, descripcion, precio, categoria
+ */
 function CamisetaDetalle() {
   const { id } = useParams();
   const camiseta = camisetas.find(c => c.id == id);

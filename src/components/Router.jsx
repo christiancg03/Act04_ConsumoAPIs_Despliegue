@@ -1,7 +1,7 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Catalogo from "./Catalogo";
 import Home from "../pages/Home";
-import CamisetaDetalle from "../pages/CamisetaDetalle";
+import CamisetaDetalle from "./CamisetaDetalle";
 import PaginaCatalogo from "../pages/PaginaCatalogo";
 import Admin from "../pages/Admin";
 
