@@ -24,10 +24,19 @@ import { useNavigate } from "react-router-dom";
  * @requires react-router-dom - useParams, useNavigate hooks
  * @requires camisetas - Array of t-shirt objects with properties: id, nombre, imagen, descripcion, precio, categoria
  */
-function CamisetaDetalle() {
-  const { id } = useParams();
-  const camiseta = camisetas.find(c => c.id == id);
-  const navegacion = useNavigate();
+function CamisetaDetalle({ camisetaProp }) {
+
+  const params = useParams?.();
+  const id = params?.id;
+  const camiseta = camisetaProp || camisetas.find(c => c.id == id);
+  // const camiseta = camisetas.find(c => c.id == id);
+
+  let navegacion;
+  try {
+    navegacion = useNavigate();
+  } catch {
+    navegacion = null;
+  }
 
   if (!camiseta) {
     return (
@@ -43,8 +52,8 @@ function CamisetaDetalle() {
       <div className="max-w-3xl mx-auto">
 
         {/* Botón volver */}
-        <button className="inline-block mb-6 px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-medium transition shadow-sm"  
-        onClick={() => navegacion(-1)}>Volver</button>
+        <button className="inline-block mb-6 px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-medium transition shadow-sm"
+          onClick={() => navegacion(-1)}>Volver</button>
 
         {/* Contenido Principal de la camiseta */}
         <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10">
