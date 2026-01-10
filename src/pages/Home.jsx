@@ -3,6 +3,7 @@ import alemania from "../assets/alemania.png";
 import inglaterra from "../assets/inglaterra.png";
 import italia from "../assets/italia.png";
 import francia from "../assets/francia.png";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -17,38 +18,38 @@ function Home() {
           Descubre camisetas auténticas de las mejores ligas del mundo.
         </p>
 
-        <a
-          href="/PaginaCatalogo"
+        <Link
+          to="/PaginaCatalogo"
           className="inline-block mt-8 px-8 py-3 bg-green-600 text-white text-lg rounded-xl shadow-md hover:bg-green-700 transition"
         >
           Ver Catálogo
-        </a>
+        </Link>
       </div>
 
       <div className="max-w-5xl mx-auto mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 px-6">
 
         <div className="flex flex-col items-center">
-          <img src={espana} alt="España" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
+          <img src={espana} alt="Logo de la Liga Española" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
           <p className="mt-3 text-gray-700 font-bold">Liga Española</p>
         </div>
 
         <div className="flex flex-col items-center">
-          <img src={francia} alt="Francia" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
+          <img src={francia} alt="Logo de la Liga Francesa" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
           <p className="mt-3 text-gray-700 font-bold">Liga Francesa</p>
         </div>
 
         <div className="flex flex-col items-center">
-          <img src={inglaterra} alt="Inglaterra" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
+          <img src={inglaterra} alt="Logo de la Liga Inglesa" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
           <p className="mt-3 text-gray-700 font-bold">Liga Inglesa</p>
         </div>
 
         <div className="flex flex-col items-center">
-          <img src={italia} alt="Italia" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
+          <img src={italia} alt="Logo de la Liga Italiana" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
           <p className="mt-3 text-gray-700 font-bold">Liga Italiana</p>
         </div>
 
         <div className="flex flex-col items-center">
-          <img src={alemania} alt="Alemania" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
+          <img src={alemania} alt="Logo de la Liga Alemana" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
           <p className="mt-3 text-gray-700 font-bold">Liga Alemana</p>
         </div>
 
