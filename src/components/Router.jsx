@@ -4,20 +4,21 @@ import Home from "../pages/Home";
 import CamisetaDetalle from "./CamisetaDetalle";
 import PaginaCatalogo from "../pages/PaginaCatalogo";
 import Admin from "../pages/Admin";
+import ErrorPage from "../pages/ErrorPage";
 
-function Router(){
-    return(
+function Router() {
+    return (
         <Routes>
-            <Route element={<Catalogo/>}>
+            <Route element={<Catalogo />}>
                 <Route path="/" element={<Home />} />
                 <Route path="/inicio" element={<Navigate to="/" />} />
                 <Route path="/camiseta/:id" element={<CamisetaDetalle />} />
                 <Route path="/paginacatalogo" element={<PaginaCatalogo></PaginaCatalogo>}></Route>
-                <Route path="/admin" element={<Admin/>}></Route>
+                <Route path="/admin" element={<Admin />}></Route>
             </Route>
 
-            <Route path="*" element={<Catalogo titulo="Página no encontrada"></Catalogo>}
-            />
+            {/* Ruta 404 */}
+            <Route path="*" element={<ErrorPage />} />
 
         </Routes>
     )
