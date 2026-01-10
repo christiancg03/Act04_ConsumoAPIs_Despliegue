@@ -29,7 +29,6 @@ function CamisetaDetalle({ camisetaProp }) {
   const params = useParams?.();
   const id = params?.id;
   const camiseta = camisetaProp || camisetas.find(c => c.id == id);
-  // const camiseta = camisetas.find(c => c.id == id);
 
   let navegacion;
   try {
@@ -40,7 +39,11 @@ function CamisetaDetalle({ camisetaProp }) {
 
   if (!camiseta) {
     return (
-      <h1 className="text-center mt-20 text-2xl text-red-600 font-bold">
+      <h1
+        role="alert"
+        aria-live="assertive"
+        className="text-center mt-20 text-2xl text-red-600 font-bold"
+      >
         Camiseta no encontrada
       </h1>
     );
@@ -52,7 +55,8 @@ function CamisetaDetalle({ camisetaProp }) {
       <div className="max-w-3xl mx-auto">
 
         {/* Botón volver */}
-        <button className="inline-block mb-6 px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-medium transition shadow-sm"
+        <button aria-label="Volver a la página anterior" 
+        className="inline-block mb-6 px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-medium transition shadow-sm"
           onClick={() => navegacion(-1)}>Volver</button>
 
         {/* Contenido Principal de la camiseta */}
@@ -72,7 +76,7 @@ function CamisetaDetalle({ camisetaProp }) {
             />
           </div>
 
-          {/* Información de la camiseta */}
+          {/* Información de la camiseta con todos sus datos correspondientes*/}
           <div className="mt-8 space-y-4 text-lg text-gray-700">
 
             <p className="leading-relaxed text-center">
