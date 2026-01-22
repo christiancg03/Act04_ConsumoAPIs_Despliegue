@@ -38,18 +38,105 @@
 }
 .body-text {
   /* font-family: var(--body-text-font-family); */
-  /* font-size: var(--body-text-font-size); */
+  font-size: var(--text-normal-font-size);
   /* font-style: var(--body-text-font-style); */
   /* font-weight: var(--body-text-font-weight); */
   /* letter-spacing: var(--body-text-letter-spacing); */
   line-height: var(--body-text-line-height);
   color: var(--colorgrey-3);
 }
+.body-text-footer {
+  /* font-family: var(--body-text-font-family); */
+  font-size: var(--textfooter-normal-font-size);
+  /* font-style: var(--body-text-font-style); */
+  /* font-weight: var(--body-text-font-weight); */
+  /* letter-spacing: var(--body-text-letter-spacing); */
+  line-height: var(--body-text-line-height);
+  color: var(--colorgrey-3);
+}
+.body-text-bold {
+  font-size: var(--text-normal-font-size);
+  line-height: var(--text-normal-line-height);
+  font-weight: 700;
+  color: var(--color-black-1);
+}
+.body-text-error {
+  font-size: var(--text-normal-font-size);
+  line-height: var(--text-normal-line-height);
+  font-weight: 700;
+  color: var(--color-red-600);
+}
 .border-primary {
-  border-color: var(--colorprimary);
+  border-color: var(--color-primary);
+}
+.btn-volver {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-grey-5);
+  font-weight: 600;
+}
+
+.btn-volver:hover {
+  background-color: var(--color-grey-4);
 }
 .primary-bg {
-  background-color: var(--colorprimary);
+  background-color: var(--color-primary);
 }
 
+.input-base {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-grey-4);
+  border-radius: 0.5rem;
+  font-size: var(--text-normal-font-size);
+}
 
+.input-base:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(9, 44, 76, 0.2);
+}
+.text-primary{
+  color: var(--color-black-1);
+  font-size: var(--texterrorpage-normal-font-size);
+}
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.btn-primary:hover {
+  background-color: var(--color-info);
+  transform: translateY(-1px);
+}
+
+.btn-primary-formulario {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary-formulario:hover {
+  background-color: var(--color-secondary);
+}
+
+.text-header{
+  color: var(--color-primary);
+  font-size: var(--text-normal-font-size);
+}
+
+.label-ligas {
+  font-size: var(--text-small-bold-font-size);
+  font-weight: 700;
+  color: var(--color-grey-2);
+}

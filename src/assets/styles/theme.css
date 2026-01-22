@@ -43,7 +43,7 @@
     --heading-h4-letter-spacing: 0px;
     --heading-h4-line-height: 35.20000076293945px;
     /* --heading-h5-font-family: "Inter", Helvetica; */
-    --heading-h5-font-size: 24px;
+    --heading-h5-font-size: 16px;
     --heading-h5-font-style: normal;
     --heading-h5-font-weight: 700;
     --heading-h5-letter-spacing: 0px;
@@ -85,7 +85,9 @@
     --text-normal-bold-letter-spacing: 0px;
     --text-normal-bold-line-height: 22.399999618530273px;
     /* --text-normal-font-family: "Inter", Helvetica; */
-    --text-normal-font-size: 16px;
+    --text-normal-font-size: 18px;
+    --texterrorpage-normal-font-size: 40px;
+    --textfooter-normal-font-size: 14px;
     --text-normal-font-style: normal;
     --text-normal-font-weight: 400;
     --text-normal-letter-spacing: 0px;
