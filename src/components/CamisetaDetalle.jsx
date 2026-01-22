@@ -56,14 +56,14 @@ function CamisetaDetalle({ camisetaProp }) {
 
         {/* Botón volver */}
         <button aria-label="Volver a la página anterior" 
-        className="inline-block mb-6 px-4 py-2 rounded-lg bg-gray-200 hover:bg-gray-300 font-medium transition shadow-sm"
+        className="btn-volver mb-6"
           onClick={() => navegacion(-1)}>Volver</button>
 
         {/* Contenido Principal de la camiseta */}
         <div className="bg-white rounded-2xl shadow-xl p-6 md:p-10">
 
           {/* Título */}
-          <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
+          <h1 className="font-heading-h2 text-center mb-8">
             {camiseta.nombre}
           </h1>
 
@@ -79,16 +79,16 @@ function CamisetaDetalle({ camisetaProp }) {
           {/* Información de la camiseta con todos sus datos correspondientes*/}
           <div className="mt-8 space-y-4 text-lg text-gray-700">
 
-            <p className="leading-relaxed text-center">
+            <p className="body-text text-center">
               {camiseta.descripcion}
             </p>
 
-            <p className="text-center">
-              <span className="font-bold">Precio:</span> {camiseta.precio} €
+            <p className="text-center body-text">
+              <span className="body-text-bold">Precio: {camiseta.precio} €</span>
             </p>
 
-            <p className="text-center">
-              <span className="font-bold">Categoría:</span> {camiseta.categoria}
+            <p className="text-center body-text">
+              <span className="body-text-bold">Categoría: {camiseta.categoria}</span>
             </p>
 
           </div>

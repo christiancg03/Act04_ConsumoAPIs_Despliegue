@@ -44,7 +44,7 @@ function PaginaCatalogo() {
     <div className="min-h-screen bg-linear-to-br bg-green-300 flex flex-col items-center justify-center p-8">
       <section className="w-full max-w7xl text-center">
         <div>
-          <h1 className="font-heading-h1 leading-(--heading-h1-line-height) text-(--colorprimary) [text-shadow:0px_4px_4px_#00000040]">
+          <h1 className="font-heading-h1 mb-4">
             Camisetas de Fútbol
           </h1>
 
@@ -73,7 +73,7 @@ function PaginaCatalogo() {
               ))
             ) : (
               <p
-                className="col-span-full text-center text-gray-600 p-4"
+                className="col-span-full text-center body-text text-sm"
                 role="alert"
                 aria-live="polite"
               >

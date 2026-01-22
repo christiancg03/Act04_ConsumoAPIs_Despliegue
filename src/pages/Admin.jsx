@@ -10,12 +10,12 @@ function Admin() {
             <header className="mb-8 text-center">
                 <h1
                     id="titulo-admin"
-                    className="text-4xl font-bold text-gray-800 mb-2"
+                    className="font-heading-h1 mb-6 text-center"
                 >
                     Panel de Administración
                 </h1>
 
-                <p className="text-gray-600">
+                <p className="body-text text-center">
                     Desde aquí puedes añadir nuevas camisetas al catálogo de la tienda.
                 </p>
             </header>

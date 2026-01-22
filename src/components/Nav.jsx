@@ -32,7 +32,7 @@ function Nav() {
                 <NavLink
                     to="/"
                     onClick={closeMenu}
-                    className="text-gray-700 hover:text-(--colorprimary) font-medium"
+                    className="body-text hover:text-primary font-medium"
                 >
                     Inicio
                 </NavLink>
@@ -40,7 +40,7 @@ function Nav() {
                 <NavLink
                     to="/paginacatalogo"
                     onClick={closeMenu}
-                    className="text-gray-700 hover:text-(--colorprimary) font-medium"
+                    className="body-text hover:text-primary font-medium"
                 >
                     Catálogo
                 </NavLink>
@@ -48,7 +48,7 @@ function Nav() {
                 <NavLink
                     to="/admin"
                     onClick={closeMenu}
-                    className="text-gray-700 hover:text-(--colorprimary) font-medium"
+                    className="body-text hover:text-primary font-medium"
                 >
                     Admin
                 </NavLink>

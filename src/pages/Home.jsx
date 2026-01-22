@@ -10,17 +10,17 @@ function Home() {
     <div className="w-full bg-gradient-to-b from-green-100 to-white py-16">
 
       <div className="max-w-4xl mx-auto text-center px-6">
-        <h1 className="text-5xl font-bold text-gray-800 mb-4">
+        <h1 className="font-heading-h1 mb-4">
           Bienvenido a la Tienda de Camisetas de Futbol Maniac
         </h1>
 
-        <p className="text-lg text-gray-700">
+        <p className="body-text">
           Descubre camisetas auténticas de las mejores ligas del mundo.
         </p>
 
         <Link
           to="/PaginaCatalogo"
-          className="inline-block mt-8 px-8 py-3 bg-green-600 text-white text-lg rounded-xl shadow-md hover:bg-green-700 transition"
+          className="inline-block mt-8 btn-primary shadow-md"
         >
           Ver Catálogo
         </Link>
@@ -30,27 +30,27 @@ function Home() {
 
         <div className="flex flex-col items-center">
           <img src={espana} alt="Logo de la Liga Española" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
-          <p className="mt-3 text-gray-700 font-bold">Liga Española</p>
+          <p className="mt-3 label-ligas">Liga Española</p>
         </div>
 
         <div className="flex flex-col items-center">
           <img src={francia} alt="Logo de la Liga Francesa" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
-          <p className="mt-3 text-gray-700 font-bold">Liga Francesa</p>
+          <p className="mt-3 label-ligas">Liga Francesa</p>
         </div>
 
         <div className="flex flex-col items-center">
           <img src={inglaterra} alt="Logo de la Liga Inglesa" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
-          <p className="mt-3 text-gray-700 font-bold">Liga Inglesa</p>
+          <p className="mt-3 label-ligas">Liga Inglesa</p>
         </div>
 
         <div className="flex flex-col items-center">
           <img src={italia} alt="Logo de la Liga Italiana" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
-          <p className="mt-3 text-gray-700 font-bold">Liga Italiana</p>
+          <p className="mt-3 label-ligas">Liga Italiana</p>
         </div>
 
         <div className="flex flex-col items-center">
           <img src={alemania} alt="Logo de la Liga Alemana" className="w-20 h-20 object-contain drop-shadow-md hover:scale-110 transition" />
-          <p className="mt-3 text-gray-700 font-bold">Liga Alemana</p>
+          <p className="mt-3 label-ligas">Liga Alemana</p>
         </div>
 
       </div>

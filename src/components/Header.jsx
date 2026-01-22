@@ -7,7 +7,7 @@ function Header() {
 
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
-        <h1 className="text-xl font-heading-h3 text-(--colorprimary)">
+        <h1 className="font-heading-h3 text-header">
           FUTBOL MANIAC
         </h1>
       <Nav></Nav>

@@ -80,12 +80,12 @@ function FormularioCamisetas(){
         <div className="flex justify-center items-center min-h-screen p-4">
             <form onSubmit={handleSubmit} className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-md">
 
-                <div className="text-2xl font-bold mb-6 text-gray-800 border-b pb-2 text-center">
+                <div className="font-heading-h5 text-center mb-6 border-b border-primary pb-2">
                     Formulario de Camisetas
                 </div>
 
                 <div className="mb-6">
-                    <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="nombre" className="block body-text-bold mb-1">
                         Nombre:
                     </label>
                     <input
@@ -94,12 +94,12 @@ function FormularioCamisetas(){
                         value={nombre}
                         onChange={(e) => setNombre(e.target.value)}
                         aria-invalid={!!error}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
+                        className="input-base"
                         />
                 </div>
 
                 <div className="mb-6">
-                    <label htmlFor="descripcion" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="descripcion" className="block body-text-bold mb-1">
                         Descripción:
                     </label>
                     <input 
@@ -107,12 +107,12 @@ function FormularioCamisetas(){
                         type="text"
                         value={descripcion}
                         onChange={(e) => setDescripcion(e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
+                        className="input-base"
                         />
                 </div>
 
                 <div className="mb-6">
-                    <label htmlFor="precio" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="precio" className="block body-text-bold mb-1">
                         Precio:
                     </label>
                     <input
@@ -120,19 +120,19 @@ function FormularioCamisetas(){
                         type="text"
                         value={precio}
                         onChange={(e) => setPrecio(e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out" 
+                        className="input-base"
                         />
                 </div>
 
                 <div className="mb-6">
-                    <label htmlFor="categoria" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="categoria" className="block body-text-bold mb-1">
                         Categoria:
                     </label>
                     <select 
                         id="categoria"
                         value={categoria}
                         onChange={(e) => setCategoria(e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out" 
+                        className="input-base" 
                         >
                         <option value="">Seleccionar Liga</option>
                         <option value="esp">Liga Española</option>
@@ -145,7 +145,7 @@ function FormularioCamisetas(){
                 </div>
 
                 <div className="mb-6">
-                    <label htmlFor="imagen" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="imagen" className="block body-text-bold mb-1">
                         Imagen:
                     </label>
                     <input
@@ -153,12 +153,12 @@ function FormularioCamisetas(){
                         type="url"
                         value={imagen}
                         onChange={(e) => setImagen(e.target.value)}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
+                        className="input-base"
                         />
                 </div>
 
                 {error && (
-                    <p className="text-red-700 bg-red-100 px-3 py-2 rounded-lg mb-4">
+                    <p className="body-text-error text-red-700 bg-red-100 px-3 py-2 rounded-lg mb-4">
                         {error}
                     </p>
                 )}
@@ -166,7 +166,7 @@ function FormularioCamisetas(){
                 <div>
                     <button
                         type="submit"
-                        className="w-full bg-indigo-600 text-white py-2 px-4 rounded-lg font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 transition duration-150 ease-in-out"
+                        className="btn-primary-formulario"
                     >
                         Enviar
                     </button>
