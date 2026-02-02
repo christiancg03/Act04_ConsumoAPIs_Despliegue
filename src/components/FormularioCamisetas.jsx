@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useCreateProducto } from '../hooks/createProducto';
 
 /**
  * FormularioCamisetas Component
@@ -38,41 +39,51 @@ function FormularioCamisetas(){
     const [categoria, setCategoria] = useState("");
     const [imagen, setImagen] = useState("");
     const [error, setError] = useState("");
+    const { addProducto, loading, error: apiError } = useCreateProducto();
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
 
         if (nombre.length < 10) {
-            setError("Debes de indicar el nombre del equipo al que va a pertenecer esta camiseta(Camiseta + Nombre Equipo)");
+            setError("Debes de indicar camiseta + nombre del equipo correspondiente.");
             return;
         }
         if (descripcion.length < 20) {
-            setError("Información insuficiente, mínimo 20 caracteres");
+            setError("Información insuficiente, mínimo 20 caracteres.");
             return;
         }
         if (!precio || isNaN(precio) || precio <= 0) {
-            setError("El precio debe ser un número válido mayor que 0");
+            setError("Precio inválido, debe ser un número válido mayor que 0.");
             return;
         }
         if (!categoria) {
-            setError("Debes de especificar a que liga pertenece la camiseta");
+            setError("Categoría no seleccionada. Debes de especificar a que liga pertenece la camiseta.");
             return;
         }
         if (!imagen.startsWith("http")) {
-            setError("La URL de la imagen debe de empezar por http");
+            setError("La imagen debe ser una URL y empezar por http.");
             return;
         }
         setError("");
 
-        const formData = {
-            nombre,
-            descripcion,
-            precio,
-            categoria,
-            imagen,
+        const productoAPI = {
+            name: nombre,
+            description: descripcion,
+            price: Number(precio),
+            category: categoria,
+            photo: imagen,
         }
+        
+        const ok = await addProducto(productoAPI);
 
-        console.log("Datos de la camiseta enviados: ", formData);
+        if (ok) {
+            alert("Camiseta añadida correctamente.");
+            setNombre("");
+            setDescripcion("");
+            setPrecio("");
+            setCategoria("");
+            setImagen("");
+        }
 
     };
 
@@ -117,7 +128,7 @@ function FormularioCamisetas(){
                     </label>
                     <input
                         id="precio" 
-                        type="text"
+                        type="number"
                         value={precio}
                         onChange={(e) => setPrecio(e.target.value)}
                         className="input-base"
@@ -135,12 +146,12 @@ function FormularioCamisetas(){
                         className="input-base" 
                         >
                         <option value="">Seleccionar Liga</option>
-                        <option value="esp">Liga Española</option>
-                        <option value="ing">Liga Inglesa</option>
-                        <option value="ita">Liga Italiana</option>
-                        <option value="ale">Liga Alemana</option>
-                        <option value="fra">Liga Francesa</option>
-                        <option value="res">Resto del Mundo</option>
+                        <option value="Liga Española">Liga Española</option>
+                        <option value="Liga Inglesa">Liga Inglesa</option>
+                        <option value="Liga Italiana">Liga Italiana</option>
+                        <option value="Liga Alemana">Liga Alemana</option>
+                        <option value="Liga Francesa">Liga Francesa</option>
+                        <option value="Resto del Mundo">Resto del Mundo</option>
                     </select>
                 </div>
 
@@ -157,6 +168,11 @@ function FormularioCamisetas(){
                         />
                 </div>
 
+                {apiError && (
+                    <p className="body-text-error text-red-700 bg-red-100 px-3 py-2 rounded-lg mb-4">
+                        {apiError}
+                    </p>
+                )}
                 {error && (
                     <p className="body-text-error text-red-700 bg-red-100 px-3 py-2 rounded-lg mb-4">
                         {error}
@@ -167,8 +183,9 @@ function FormularioCamisetas(){
                     <button
                         type="submit"
                         className="btn-primary-formulario"
+                        disabled={loading}
                     >
-                        Enviar
+                        {loading ? "Guardando..." : "Enviar"}
                     </button>
                 </div>
 
