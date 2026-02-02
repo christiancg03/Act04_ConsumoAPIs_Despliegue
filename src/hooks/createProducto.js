@@ -1,5 +1,3 @@
-//3-Creamos los hooks correspondientes
-
 import { useState } from "react";
 import { createProducto } from "../services/productosService";
 
