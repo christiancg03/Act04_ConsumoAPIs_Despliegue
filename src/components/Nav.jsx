@@ -1,8 +1,12 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 function Nav() {
     const [open, setOpen] = useState(false);
+    const { userLogged, logout } = useContext(UserContext);
+
     const toggleMenu = () => setOpen(!open);
     const closeMenu = () => setOpen(false);
 
@@ -52,6 +56,18 @@ function Nav() {
                 >
                     Admin
                 </NavLink>
+
+                {userLogged && (
+                    <button
+                        onClick={() => {
+                            logout();
+                            closeMenu();
+                        }}
+                        className="ml-4 px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
+                    >
+                        Logout
+                    </button>
+                )}
 
             </nav>
         </>
