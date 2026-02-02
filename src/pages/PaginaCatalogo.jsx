@@ -1,6 +1,3 @@
-//6.2- Usamos el UserContext en los componentes
-//en este caso el useProductos y el deleteProducto de productosService
-
 /**
  * PaginaCatalogo Component
  * 
