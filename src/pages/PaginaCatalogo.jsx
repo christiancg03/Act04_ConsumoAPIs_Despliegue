@@ -1,7 +1,5 @@
-import { useState, useMemo } from "react";
-import Camiseta from "../components/Camiseta";
-import camisetas from "../data/camisetas";
-import SearchBar from "../components/SearchBar";
+//6.2- Usamos el UserContext en los componentes
+//en este caso el useProductos y el deleteProducto de productosService
 
 /**
  * PaginaCatalogo Component
@@ -26,52 +24,84 @@ import SearchBar from "../components/SearchBar";
  * @requires SearchBar - Component for user input
  * @requires Camiseta - Component for individual shirt display
  */
-function PaginaCatalogo() {
 
+import { useState, useMemo } from "react";
+import Camiseta from "../components/Camiseta";
+import SearchBar from "../components/SearchBar";
+import { useProductos } from "../hooks/useProductos";
+import { useDeleteProducto } from "../hooks/useDeleteProducto";
+
+function PaginaCatalogo() {
   const [searchTerm, setSearchTerm] = useState("");
 
+  const { productos, loading, error, setProductos } = useProductos();
+  const { removeProducto, loading: deleting, error: deleteError } = useDeleteProducto();
+
   const camisetasFiltradas = useMemo(() => {
-    if (!searchTerm) return camisetas;
+    if (!searchTerm) return productos;
 
     const search = searchTerm.toLowerCase();
 
-    return camisetas.filter((c) =>
+    return productos.filter((c) =>
       c.nombre.toLowerCase().includes(search)
     );
-  }, [searchTerm]);
+  }, [searchTerm, productos]);
+
+    const handleDelete = async (id) => {
+      const ok = confirm("¿Seguro que quieres borrar esta camiseta?");
+      if (!ok) return;
+
+        const success = await removeProducto(id);
+
+      if (success) {
+        setProductos((prev) => prev.filter((p) => p.id !== id));
+      } else {
+        alert("Error al borrar la camiseta");
+      }
+    };
 
   return (
     <div className="min-h-screen bg-linear-to-br bg-green-300 flex flex-col items-center justify-center p-8">
       <section className="w-full max-w7xl text-center">
-        <div>
-          <h1 className="font-heading-h1 mb-4">
-            Camisetas de Fútbol
-          </h1>
 
-          <p className="body-text">
-            Nuestro Catálogo de camisetas de fútbol:
+        <h1 className="font-heading-h1 mb-4">
+          Camisetas de Fútbol
+        </h1>
+
+        <p className="body-text">
+          Nuestro Catálogo de camisetas de fútbol:
+        </p>
+
+        <SearchBar
+          searchTerm={searchTerm}
+          onSearchChange={setSearchTerm}
+          placeholder="Buscar camisetas por nombre..."
+        />
+
+        {loading && <p className="body-text mt-6">Cargando camisetas...</p>}
+
+        {error && (
+          <p className="body-text-error text-red-700 mt-6">
+            {error}
           </p>
+        )}
 
-          <SearchBar
-            searchTerm={searchTerm}
-            onSearchChange={setSearchTerm}
-            placeholder="Buscar camisetas por nombre..."
-          />
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
-            {camisetasFiltradas.length > 0 ? (
-              camisetasFiltradas.map((camiseta) => (
-                <Camiseta
-                  key={camiseta.id}
-                  id={camiseta.id}
-                  nombre={camiseta.nombre}
-                  descripcion={camiseta.descripcion}
-                  precio={camiseta.precio}
-                  categoria={camiseta.categoria}
-                  foto={camiseta.imagen}
-                />
-              ))
-            ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full mt-8">
+          {!loading && camisetasFiltradas.length > 0 ? (
+            camisetasFiltradas.map((camiseta) => (
+              <Camiseta
+                key={camiseta.id}
+                id={camiseta.id}
+                nombre={camiseta.nombre}
+                descripcion={camiseta.descripcion}
+                precio={camiseta.precio}
+                categoria={camiseta.categoria}
+                foto={camiseta.foto}
+                onDelete={handleDelete}
+              />
+            ))
+          ) : (
+            !loading && (
               <p
                 className="col-span-full text-center body-text text-sm"
                 role="alert"
@@ -79,9 +109,10 @@ function PaginaCatalogo() {
               >
                 No se encontraron camisetas con el término "{searchTerm}".
               </p>
-            )}
-          </div>
+            )
+          )}
         </div>
+
       </section>
     </div>
   );
