@@ -52,6 +52,7 @@ function PaginaCatalogo() {
 
       if (success) {
         setProductos((prev) => prev.filter((p) => p.id !== id));
+        alert("Camiseta eliminada con éxito");
       } else {
         alert("Error al borrar la camiseta");
       }
