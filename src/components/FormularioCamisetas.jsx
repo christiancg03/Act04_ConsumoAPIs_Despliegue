@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useCreateProducto } from '../hooks/createProducto';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * FormularioCamisetas Component
@@ -39,6 +40,7 @@ function FormularioCamisetas(){
     const [categoria, setCategoria] = useState("");
     const [imagen, setImagen] = useState("");
     const [error, setError] = useState("");
+    const navigate = useNavigate();
     const { addProducto, loading, error: apiError } = useCreateProducto();
 
     async function handleSubmit(e) {
@@ -78,6 +80,7 @@ function FormularioCamisetas(){
 
         if (ok) {
             alert("Camiseta añadida correctamente.");
+            navigate("/paginacatalogo")
             setNombre("");
             setDescripcion("");
             setPrecio("");
