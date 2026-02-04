@@ -11,9 +11,7 @@ const mapProductoFromAPI = (p) => ({
   foto: p.photo,
 });
 
-// =========================
 // Get All
-// =========================
 export const getProductos = async () => {
   try {
     const res = await axios.get(API_URL);
@@ -29,9 +27,7 @@ export const getProductos = async () => {
   }
 };
 
-// =========================
 // Get By ID
-// =========================
 export const getProductoById = async (id) => {
   try {
     const res = await axios.get(`${API_URL}/${id}`);
@@ -47,9 +43,7 @@ export const getProductoById = async (id) => {
   }
 };
 
-// =========================
 // Create
-// =========================
 export const createProducto = async (producto) => {
   try {
     const res = await axios.post(API_URL, producto);
@@ -63,9 +57,7 @@ export const createProducto = async (producto) => {
   }
 };
 
-// =========================
 // Delete
-// =========================
 export const deleteProducto = async (id) => {
   try {
     const res = await axios.delete(`${API_URL}/${id}`);
