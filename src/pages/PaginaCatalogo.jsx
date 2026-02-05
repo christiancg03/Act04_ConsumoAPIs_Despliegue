@@ -44,19 +44,19 @@ function PaginaCatalogo() {
     );
   }, [searchTerm, productos]);
 
-    const handleDelete = async (id) => {
-      const ok = confirm("¿Seguro que quieres borrar esta camiseta?");
-      if (!ok) return;
+  const handleDelete = async (id) => {
+    const ok = confirm("¿Seguro que quieres borrar esta camiseta?");
+    if (!ok) return;
 
-        const success = await removeProducto(id);
+    const success = await removeProducto(id);
 
-      if (success) {
-        setProductos((prev) => prev.filter((p) => p.id !== id));
-        alert("Camiseta eliminada con éxito");
-      } else {
-        alert("Error al borrar la camiseta");
-      }
-    };
+    if (success) {
+      setProductos((prev) => prev.filter((p) => p.id !== id));
+      alert("Camiseta eliminada con éxito");
+    } else {
+      alert("Error al borrar la camiseta");
+    }
+  };
 
   return (
     <div className="min-h-screen bg-linear-to-br bg-green-300 flex flex-col items-center justify-center p-8">
@@ -112,7 +112,8 @@ function PaginaCatalogo() {
         </div>
 
       </section>
-    </div>
+
+    </div >
   );
 }
 
