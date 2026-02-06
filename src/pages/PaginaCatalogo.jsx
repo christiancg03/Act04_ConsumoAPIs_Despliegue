@@ -1,27 +1,3 @@
-/**
- * PaginaCatalogo Component
- * 
- * Displays a catalog of football shirts with search functionality.
- * 
- * @component
- * @returns {JSX.Element} A page displaying a filterable grid of football shirts
- * 
- * @description
- * This component renders a catalog page featuring:
- * - A search bar to filter shirts by name (case-insensitive)
- * - A responsive grid layout displaying filtered shirt cards
- * - A message when no results match the search term
- * - Uses memoization to optimize filtering performance
- * 
- * @example
- * return <PaginaCatalogo />
- * 
- * @requires useState - React hook for managing search state
- * @requires useMemo - React hook for memoizing filtered results
- * @requires SearchBar - Component for user input
- * @requires Camiseta - Component for individual shirt display
- */
-
 import { useState, useMemo } from "react";
 import Camiseta from "../components/Camiseta";
 import SearchBar from "../components/SearchBar";

@@ -2,37 +2,6 @@ import { useState } from 'react';
 import { useCreateProducto } from '../hooks/createProducto';
 import { useNavigate } from 'react-router-dom';
 
-/**
- * FormularioCamisetas Component
- * 
- * A React form component for submitting shirt/jersey product information.
- * Manages form state for shirt details and validates user input before submission.
- * 
- * @component
- * @returns {JSX.Element} A centered form with fields for shirt name, description, price, category, and image URL
- * 
- * @description
- * This component renders a form with the following features:
- * - Form fields: nombre (name), descripcion (description), precio (price), categoria (league), imagen (image URL)
- * - Client-side validation for all fields
- * - Error messages displayed to the user
- * - Form submission handling with console logging
- * 
- * @validation
- * - nombre: Minimum 10 characters required (shirt name + team name)
- * - descripcion: Minimum 20 characters required
- * - precio: Must be a valid number greater than 0
- * - categoria: Must be selected from available league options
- * - imagen: URL must start with "http"
- * 
- * @state
- * - {string} nombre - The shirt name
- * - {string} descripcion - The shirt description
- * - {string} precio - The shirt price
- * - {string} categoria - The league category (esp, ing, ita, ale, fra, res)
- * - {string} imagen - The image URL
- * - {string} error - Error message to display to the user
- */
 function FormularioCamisetas(){
     const [nombre, setNombre] = useState("");
     const [descripcion, setDescripcion] = useState("");

@@ -2,33 +2,6 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 
-/**
- * Componente que representa una tarjeta de producto de camiseta.
- * 
- * Muestra la información de una camiseta incluyendo imagen, nombre, descripción,
- * precio y categoría. La tarjeta es clickeable y redirige al detalle del producto.
- * 
- * @component
- * @param {Object} props - Las propiedades del componente
- * @param {number} props.id - Identificador único de la camiseta
- * @param {string} props.foto - URL de la imagen del producto
- * @param {string} props.nombre - Nombre de la camiseta
- * @param {string} props.descripcion - Descripción breve del producto
- * @param {number} props.precio - Precio del producto en euros
- * @param {string} props.categoria - Categoría a la que pertenece la camiseta
- * 
- * @returns {JSX.Element} Elemento de artículo con información de la camiseta
- * 
- * @example
- * <Camiseta
- *   id={1}
- *   foto="https://example.com/camiseta.jpg"
- *   nombre="Camiseta Azul"
- *   descripcion="Camiseta de algodón de alta calidad"
- *   precio={19.99}
- *   categoria="Casual"
- * />
- */
 function Camiseta(props) {
   const { id, foto, nombre, descripcion, precio, categoria, onDelete } = props;
   const { userLogged } = useContext(UserContext);
