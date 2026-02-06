@@ -20,9 +20,9 @@ export const getProductos = async () => {
 
     return productos.map(mapProductoFromAPI);
   } catch (error) {
-    console.error("Error al cargar productos:", error);
+    console.error("Error al cargar los productos de las camisetas:", error);
     throw new Error(
-      error.response?.data?.message || "Error al cargar productos"
+      error.response?.data?.message || "Error al cargar los productos de las camisetas"
     );
   }
 };
@@ -36,9 +36,9 @@ export const getProductoById = async (id) => {
 
     return mapProductoFromAPI(producto);
   } catch (error) {
-    console.error(`Error al cargar producto ${id}:`, error);
+    console.error(`Error al cargar el producto correspondiente - ${id}:`, error);
     throw new Error(
-      error.response?.data?.message || "Error al cargar producto"
+      error.response?.data?.message || "Error al cargar el producto correspondiente"
     );
   }
 };
@@ -50,9 +50,9 @@ export const createProducto = async (producto) => {
 
     return res.data.data ?? res.data;
   } catch (error) {
-    console.error("Error al crear producto:", error);
+    console.error("Error al crear el producto de la camiseta:", error);
     throw new Error(
-      error.response?.data?.message || "Error al crear producto"
+      error.response?.data?.message || "Error al crear el producto de la camiseta"
     );
   }
 };
@@ -69,10 +69,10 @@ export const deleteProducto = async (id) => {
     return res.data.data || res.data;
 
   } catch (error) {
-    console.error("Error al borrar producto:", error);
+    console.error("Error al borrar el producto de la camiseta:", error);
 
     throw new Error(
-      error.response?.data?.message || "Error al borrar producto"
+      error.response?.data?.message || "Error al borrar el producto de la camiseta"
     );
   }
 };
