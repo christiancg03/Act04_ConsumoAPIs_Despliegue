@@ -13,7 +13,7 @@ export const useDeleteProducto = () => {
             await deleteProducto(id);
             return true;
         } catch (err) {
-            setError(err.message || "Error al borrar el producto");
+            setError(err.message || "Error al borrar la camiseta");
             return false;
         } finally {
             setLoading(false);

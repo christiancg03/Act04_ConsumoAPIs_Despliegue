@@ -12,7 +12,7 @@ export function useProductos() {
         const data = await getProductos();
         setProductos(data);
       } catch (err) {
-        setError(err.message || "Error cargando los productos");
+        setError(err.message || "Error cargando las camisetas");
       } finally {
         setLoading(false);
       }
