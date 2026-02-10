@@ -3,7 +3,6 @@
 
 
 .contenedor__h1{
-  /* font-family: var(--heading-h1-font-family); */
   font-size: var(--heading-h1-font-size);
   font-style: var(--heading-h1-font-style);
   font-weight: var(--heading-h1-font-weight);
@@ -37,20 +36,12 @@
   line-height: var(--heading-h5-line-height);
 }
 .body-text {
-  /* font-family: var(--body-text-font-family); */
   font-size: var(--text-normal-font-size);
-  /* font-style: var(--body-text-font-style); */
-  /* font-weight: var(--body-text-font-weight); */
-  /* letter-spacing: var(--body-text-letter-spacing); */
   line-height: var(--body-text-line-height);
   color: var(--colorgrey-3);
 }
 .body-text-footer {
-  /* font-family: var(--body-text-font-family); */
   font-size: var(--textfooter-normal-font-size);
-  /* font-style: var(--body-text-font-style); */
-  /* font-weight: var(--body-text-font-weight); */
-  /* letter-spacing: var(--body-text-letter-spacing); */
   line-height: var(--body-text-line-height);
   color: var(--colorgrey-3);
 }
