@@ -154,3 +154,35 @@
   padding: 2rem;
   background-color: var(--color-white);
 }
+
+.search-container-nui {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.btn-mic-nui {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.btn-mic-nui.active {
+  color: var(--color-red-600);
+  background-color: rgba(220, 38, 38, 0.1);
+}
+
+.btn-mic-nui.inactive {
+  color: var(--color-grey-3);
+}
