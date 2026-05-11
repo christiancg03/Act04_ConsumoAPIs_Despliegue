@@ -8,6 +8,9 @@ import { Mic } from "lucide-react";
 
 function PaginaCatalogo() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("");
+  const [precioMin, setPrecioMin] = useState("");
+  const [precioMax, setPrecioMax] = useState("");
   const { productos, loading, error, setProductos } = useProductos();
   const { removeProducto } = useDeleteProducto();
 
@@ -32,11 +35,33 @@ function PaginaCatalogo() {
     touchStartX.current = null;
   };
 
+  const categorias = useMemo(() => {
+    const cats = productos.map(p => p.categoria).filter(Boolean);
+    return [...new Set(cats)];
+  }, [productos]);
+
   const camisetasFiltradas = useMemo(() => {
-    if (!searchTerm) return productos;
-    const search = searchTerm.toLowerCase();
-    return productos.filter((c) => c.nombre.toLowerCase().includes(search));
-  }, [searchTerm, productos]);
+    let filtered = productos;
+
+    if (searchTerm) {
+      const search = searchTerm.toLowerCase();
+      filtered = filtered.filter((c) => c.nombre.toLowerCase().includes(search));
+    }
+
+    if (categoriaSeleccionada) {
+      filtered = filtered.filter((c) => c.categoria === categoriaSeleccionada);
+    }
+
+    if (precioMin) {
+      filtered = filtered.filter((c) => c.precio >= parseFloat(precioMin));
+    }
+
+    if (precioMax) {
+      filtered = filtered.filter((c) => c.precio <= parseFloat(precioMax));
+    }
+
+    return filtered;
+  }, [searchTerm, categoriaSeleccionada, precioMin, precioMax, productos]);
 
   const handleDelete = async (id) => {
     const ok = confirm("¿Seguro que quieres borrar esta camiseta?");
@@ -88,6 +113,34 @@ function PaginaCatalogo() {
               ? "Escuchando ahora..." 
               : isMobile ? "→ Desliza a la derecha para buscar por voz" : "Haz clic en el micro para hablar"}
           </p>
+        </div>
+
+        {/* Filtros adicionales */}
+        <div className="flex flex-wrap gap-4 justify-center mb-6">
+          <select
+            value={categoriaSeleccionada}
+            onChange={(e) => setCategoriaSeleccionada(e.target.value)}
+            className="px-4 py-2 border rounded"
+          >
+            <option value="">Todas las categorías</option>
+            {categorias.map(cat => (
+              <option key={cat} value={cat}>{cat}</option>
+            ))}
+          </select>
+          <input
+            type="number"
+            placeholder="Precio mínimo"
+            value={precioMin}
+            onChange={(e) => setPrecioMin(e.target.value)}
+            className="px-4 py-2 border rounded"
+          />
+          <input
+            type="number"
+            placeholder="Precio máximo"
+            value={precioMax}
+            onChange={(e) => setPrecioMax(e.target.value)}
+            className="px-4 py-2 border rounded"
+          />
         </div>
 
         {loading && <p className="body-text mt-6">Cargando camisetas...</p>}

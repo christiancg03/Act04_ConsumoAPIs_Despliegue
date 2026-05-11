@@ -1,4 +1,5 @@
 import FormularioCamisetas from "../components/FormularioCamisetas";
+import Informes from "../components/Informes";
 
 function Admin() {
     return (
@@ -20,10 +21,14 @@ function Admin() {
             </header>
 
             <section
-                className="w-full max-w-xl"
+                className="w-full max-w-4xl mb-8"
                 aria-labelledby="titulo-formulario"
             >
                 <FormularioCamisetas />
+            </section>
+
+            <section className="w-full max-w-6xl">
+                <Informes />
             </section>
         </div>
     );
