@@ -8,6 +8,11 @@
     --color-grey-3: rgba(130, 130, 130, 1);
     --color-grey-4: rgba(189, 189, 189, 1);
     --color-grey-5: rgba(224, 224, 224, 1);
+    --color-form-bg: rgba(255, 255, 255, 0.96);
+    --color-form-field-bg: rgba(250, 251, 252, 1);
+    --color-form-border: rgba(9, 44, 76, 0.16);
+    --color-form-label: rgba(26, 32, 44, 0.95);
+    --color-form-helper: rgba(101, 116, 139, 1);
     --color-info: rgba(47, 128, 237, 1);
     --color-primary: rgba(9, 44, 76, 1);
     --color-secondary: rgba(242, 153, 74, 1);
@@ -15,6 +20,7 @@
     --color-warning: rgba(226, 185, 59, 1);
     --color-white: rgba(255, 255, 255, 1);
     --dropshadow: 0px 4px 24px 0px rgba(9, 44, 76, 0.4);
+    --shadow-soft: 0 18px 45px rgba(9, 44, 76, 0.12);
     --gray-3: rgba(130, 130, 130, 1);
 
     font-family: 'Roboto', 'Helvetica', 'Arial', 'sans-serif';
@@ -42,7 +48,7 @@
     --heading-h4-font-weight: 700;
     --heading-h4-letter-spacing: 0px;
     --heading-h4-line-height: 35.20000076293945px;
-    /* --heading-h5-font-family: "Inter", Helvetica; */
+    --heading-h5-font-family: "Inter", Helvetica;
     --heading-h5-font-size: 16px;
     --heading-h5-font-style: normal;
     --heading-h5-font-weight: 700;

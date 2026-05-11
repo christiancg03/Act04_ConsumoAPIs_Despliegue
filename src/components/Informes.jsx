@@ -42,27 +42,27 @@ function Informes() {
   if (!estadisticas) return <p>No hay datos para mostrar.</p>;
 
   return (
-    <div className="p-8">
-      <h2 className="text-2xl font-bold mb-6">Informes del Catálogo</h2>
+    <div className="informes-pagina">
+      <h2 className="informes-heading">Informes del Catálogo</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="text-lg font-semibold">Total Productos</h3>
-          <p className="text-2xl">{estadisticas.totalProductos}</p>
+      <div className="informes-numeros">
+        <div className="informe-card">
+          <h3 className="informe-card-title">Total Productos</h3>
+          <p className="informe-card-value">{estadisticas.totalProductos}</p>
         </div>
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="text-lg font-semibold">Valor Total (€)</h3>
-          <p className="text-2xl">{estadisticas.totalValor}</p>
+        <div className="informe-card">
+          <h3 className="informe-card-title">Valor Total (€)</h3>
+          <p className="informe-card-value">{estadisticas.totalValor}</p>
         </div>
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="text-lg font-semibold">Precio Promedio (€)</h3>
-          <p className="text-2xl">{estadisticas.precioPromedio}</p>
+        <div className="informe-card">
+          <h3 className="informe-card-title">Precio Promedio (€)</h3>
+          <p className="informe-card-value">{estadisticas.precioPromedio}</p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="text-lg font-semibold mb-4">Productos por Categoría</h3>
+      <div className="informes-charts">
+        <div className="informe-chart-card">
+          <h3 className="informe-chart-title">Productos por Categoría</h3>
           <PieChart width={400} height={300}>
             <Pie
               data={estadisticas.dataCategoria}
@@ -71,7 +71,7 @@ function Informes() {
               labelLine={false}
               label={({ categoria, percent }) => `${categoria} ${(percent * 100).toFixed(0)}%`}
               outerRadius={80}
-              fill="#8884d8"
+              fill="var(--color-info)"
               dataKey="count"
             >
               {estadisticas.dataCategoria.map((entry, index) => (
@@ -82,14 +82,14 @@ function Informes() {
           </PieChart>
         </div>
 
-        <div className="bg-white p-4 rounded shadow">
-          <h3 className="text-lg font-semibold mb-4">Precios de Productos</h3>
+        <div className="informe-chart-card">
+          <h3 className="informe-chart-title">Precios de Productos</h3>
           <BarChart width={400} height={300} data={estadisticas.dataPrecio}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="nombre" />
             <YAxis />
             <Tooltip />
-            <Bar dataKey="precio" fill="#8884d8" />
+            <Bar dataKey="precio" fill="var(--color-info)" />
           </BarChart>
         </div>
       </div>
